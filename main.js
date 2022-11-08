@@ -79,15 +79,14 @@ for (let i = 0; i < posts.length; i++) {
 =============================================*/
 
 const likeBtns = document.querySelectorAll('.js-like-button');
-const likedPosts = [];
 
+const likedPosts = [];
 for (let i = 0; i < likeBtns.length; i++) {
    const likeBtn = likeBtns[i];
    likeBtn.addEventListener('click', function () {
       this.classList.toggle('like-button--liked');
       // counter likes
       const likeCounter = document.getElementById(`like-counter-${i + 1}`);
-      console.log(parseFloat(likeCounter.innerHTML), posts[i].likes);
 
       let innerNumber = parseInt(likeCounter.innerHTML);
       if (innerNumber === posts[i].likes) {
@@ -95,9 +94,14 @@ for (let i = 0; i < likeBtns.length; i++) {
       } else if (innerNumber > posts[i].likes) {
          likeCounter.innerHTML = parseInt((innerNumber -= 1));
       }
+      // pusho gli id dei liked-posts in un nuovo array
+      const currenteId = posts[i].id;
+      if (!likedPosts.includes(currenteId)) {
+         likedPosts.push(currenteId);
+      }
+      console.log(likedPosts);
    });
 }
+
 // fallback qunado non c'è la foto profilo
-for (let i = 0; i < posts.length; i++) {
-   const post = posts[i];
-}
+//...... buona notte ho sonno
