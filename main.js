@@ -72,17 +72,28 @@ for (let i = 0; i < posts.length; i++) {
    const context = post;
    const card = template(context);
    container.innerHTML += card;
-   //seleziono il bottone like
 }
-
+// stampo gli id dei like counters
+for (let i = 1; i <= posts.length + 1; i++) {}
 /*=========================================
     main
 =============================================*/
 
 const likeBtns = document.querySelectorAll('.js-like-button');
+const likedPosts = [];
+
 for (let i = 0; i < likeBtns.length; i++) {
    const likeBtn = likeBtns[i];
    likeBtn.addEventListener('click', function () {
-      alert('cciao');
+      this.classList.toggle('like-button--liked');
+      const likeCounter = document.getElementById(`like-counter-${i + 1}`);
+      console.log(parseFloat(likeCounter.innerHTML), posts[i].likes);
+      if (parseInt(likeCounter.innerHTML) === posts[i].likes) {
+         let innerNumber = parseInt(likeCounter.innerHTML);
+         likeCounter.innerHTML = parseInt((innerNumber += 1));
+      } else if (parseInt(likeCounter.innerHTML) > posts[i].likes) {
+         let innerNumber = parseInt(likeCounter.innerHTML);
+         likeCounter.innerHTML = parseInt((innerNumber -= 1));
+      }
    });
 }
