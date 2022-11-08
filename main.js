@@ -73,8 +73,7 @@ for (let i = 0; i < posts.length; i++) {
    const card = template(context);
    container.innerHTML += card;
 }
-// stampo gli id dei like counters
-for (let i = 1; i <= posts.length + 1; i++) {}
+
 /*=========================================
     main
 =============================================*/
@@ -97,4 +96,8 @@ for (let i = 0; i < likeBtns.length; i++) {
          likeCounter.innerHTML = parseInt((innerNumber -= 1));
       }
    });
+}
+// fallback qunado non c'è la foto profilo
+for (let i = 0; i < posts.length; i++) {
+   const post = posts[i];
 }

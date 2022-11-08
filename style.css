@@ -52,6 +52,11 @@ h1 {
    margin-right: 24px;
 }
 
+.post-meta__icon:has(.profile-pic--fallback) {
+   display: grid;
+   place-content: center;
+}
+
 .post-meta__data {
    display: flex;
    flex-direction: column;
@@ -70,7 +75,9 @@ h1 {
    border-radius: 50%;
    max-width: 60px;
 }
-
+.profile-pic--fallback {
+   font-size: 1.2rem;
+}
 .profile-pic-default {
    display: flex;
    justify-content: center;
