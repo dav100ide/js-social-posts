@@ -55,11 +55,18 @@ const posts = [
       created: '2021-03-05',
    },
 ];
+/*=======================
+    handlebar
+=========================*/
 
 const container = document.getElementById('container');
 
 for (let i = 0; i < posts.length; i++) {
-   const card = document.getElementById('template-post').content.cloneNode(true);
    const post = posts[i];
-   container.append(card);
+
+   const source = document.getElementById('template-post').innerHTML;
+   const template = Handlebars.compile(source);
+   let context = post;
+   const card = template(context);
+   container.innerHTML += card;
 }

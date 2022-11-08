@@ -44,44 +44,44 @@
          </div> -->
       </div>
       <!-- template da clonare -->
-      <template id="template-post">
-         <div class="post">
+      <script id="template-post" type="text/x-handlebars-template">
+         <div class='post'>
             <!-- post header -->
-            <div class="post__header">
-               <div class="post-meta">
-                  <div class="post-meta__icon">
-                     <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione" />
+            <div class='post__header'>
+               <div class='post-meta'>
+                  <div class='post-meta__icon'>
+                     <img class='profile-pic' src='https://unsplash.it/300/300?image=15' alt='Phil Mangione' />
                   </div>
-                  <div class="post-meta__data">
-                     <div class="post-meta__author">Phil Mangione</div>
-                     <div class="post-meta__time">4 mesi fa</div>
+                  <div class='post-meta__data'>
+                     <div class='post-meta__author'>{{auhor.name}}</div>
+                     <div class='post-meta__time'>{{created}}</div>
                   </div>
                </div>
             </div>
             <!-- /post header -->
             <!-- descrizione e immagine -->
-            <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
-            <div class="post__image">
-               <img src="https://unsplash.it/600/300?image=171" alt="" />
+            <div class='post__text'>{{content}}</div>
+            <div class='post__image'>
+               <img src='{{media}}' alt='' />
             </div>
             <!-- /descrizione e immagine -->
-            <div class="post__footer">
-               <div class="likes js-likes">
+            <div class='post__footer'>
+               <div class='likes js-likes'>
                   <!-- bottone like -->
-                  <div class="likes__cta">
-                     <a class="like-button js-like-button" href="#" data-postid="1">
-                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                        <span class="like-button__label">Mi Piace</span>
+                  <div class='likes__cta'>
+                     <a class='like-button js-like-button' href='#' data-postid='1'>
+                        <i class='like-button__icon fas fa-thumbs-up' aria-hidden='true'></i>
+                        <span class='like-button__label'>Mi Piace</span>
                      </a>
                   </div>
                   <!-- /bottone like -->
                   <!-- numeri like -->
-                  <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone</div>
+                  <div class='likes__counter'>Piace a <b id='like-counter-1' class='js-likes-counter'>{{likes}}</b> persone</div>
                   <!-- numeri like -->
                </div>
             </div>
          </div>
-      </template>
+      </script>
       <!-- /template da clonare -->
       <!-- handlebars: template engine -->
       <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
