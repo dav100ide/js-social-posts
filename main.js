@@ -86,13 +86,14 @@ for (let i = 0; i < likeBtns.length; i++) {
    const likeBtn = likeBtns[i];
    likeBtn.addEventListener('click', function () {
       this.classList.toggle('like-button--liked');
+      // counter likes
       const likeCounter = document.getElementById(`like-counter-${i + 1}`);
       console.log(parseFloat(likeCounter.innerHTML), posts[i].likes);
-      if (parseInt(likeCounter.innerHTML) === posts[i].likes) {
-         let innerNumber = parseInt(likeCounter.innerHTML);
+
+      let innerNumber = parseInt(likeCounter.innerHTML);
+      if (innerNumber === posts[i].likes) {
          likeCounter.innerHTML = parseInt((innerNumber += 1));
-      } else if (parseInt(likeCounter.innerHTML) > posts[i].likes) {
-         let innerNumber = parseInt(likeCounter.innerHTML);
+      } else if (innerNumber > posts[i].likes) {
          likeCounter.innerHTML = parseInt((innerNumber -= 1));
       }
    });
