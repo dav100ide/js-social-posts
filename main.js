@@ -89,19 +89,19 @@ for (let i = 0; i < likeBtns.length; i++) {
       const likeCounter = document.getElementById(`like-counter-${i + 1}`);
 
       let innerNumber = parseInt(likeCounter.innerHTML);
+      const currenteId = posts[i].id;
       if (innerNumber === posts[i].likes) {
          likeCounter.innerHTML = parseInt((innerNumber += 1));
+         likedPosts.push(currenteId);
       } else if (innerNumber > posts[i].likes) {
          likeCounter.innerHTML = parseInt((innerNumber -= 1));
+         const index = likedPosts.indexOf(currenteId);
+         likedPosts.splice(index, 1);
       }
-      // pusho gli id dei liked-posts in un nuovo array
-      const currenteId = posts[i].id;
-      if (!likedPosts.includes(currenteId)) {
-         likedPosts.push(currenteId);
-      }
+
       console.log(likedPosts);
    });
 }
 
 // fallback qunado non c'è la foto profilo
-//...... buona notte ho sonno
+//...
